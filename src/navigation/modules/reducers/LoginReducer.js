@@ -32,7 +32,7 @@ export default (state = initialState, action) => {
         error: action.error,
       };
     }
-    default: 
+    default:
       return state;
   }
-}
+};
