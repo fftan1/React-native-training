@@ -1,0 +1,72 @@
+// ================== current sources ======================
+// {
+//     "env": {
+//         "browser": true,
+//         "es6": true
+//     },
+//     "extends": [
+//         "eslint:recommended",
+//         "plugin:@typescript-eslint/eslint-recommended"
+//     ],
+//     "globals": {
+//         "Atomics": "readonly",
+//         "SharedArrayBuffer": "readonly"
+//     },
+//     "parser": "@typescript-eslint/parser",
+//     "parserOptions": {
+//         "ecmaFeatures": {
+//             "jsx": true
+//         },
+//         "ecmaVersion": 2018,
+//         "sourceType": "module"
+//     },
+//     "plugins": [
+//         "react",
+//         "@typescript-eslint"
+//     ],
+//     "rules": {
+//     }
+// }
+
+// =================== my import sources ========================
+
+{
+  "env": {
+    "node": true,
+    "browser": false,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "radix": "off",
+    "max-len": "off",
+    "camelcase": "off",
+    "no-bitwise": "off",
+    "no-plusplus": "off",
+    "arrow-body-style": "off",
+    "object-curly-newline": "off",
+    "import/no-extraneous-dependencies": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": false,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": 0
+  }
+}
+  
