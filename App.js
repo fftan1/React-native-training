@@ -101,7 +101,6 @@ const store = createStore(reducers, applyMiddleware(sagaMidleWare));
 
 const App = () => {
   const getRef = (abc) => {
-    console.log("TCL: getRef -> abcref", abc.state)
     const { navigatorNamed } = NavigationService;
     NavigationService.setNavigator(navigatorNamed.MyNavigator, abc);
   };

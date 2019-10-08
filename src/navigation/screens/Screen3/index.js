@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
-
+import PropTypes from 'prop-types';
 // Components
 
 
@@ -11,21 +11,17 @@ import styles from './styles';
 
 
 export default class Screen3 extends React.Component {
-
-
   onSubmitLogout = () => {
-    const { navigate } = this.props.navigation;
-    Alert.alert('Answer question', 'Are you sure?', 
+    const { navigation } = this.props;
+    Alert.alert('Answer question', 'Are you sure?',
       [
-        {text: 'hoi qq'},
-        {text: 'cancel'},
-        {text: 'OK', onPress: () => navigate('LOGIN_SC')}
-      ],
-    )
+        { text: 'hoi qq' },
+        { text: 'cancel' },
+        { text: 'OK', onPress: () => navigation.navigate('LOGIN_SC') },
+      ]);
   }
 
   render = () => {
-    
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.btnLogout} onPress={this.onSubmitLogout}>
@@ -35,3 +31,7 @@ export default class Screen3 extends React.Component {
     );
   }
 }
+
+Screen3.propTypes = {
+  navigation: PropTypes.instanceOf(Object).isRequired,
+};

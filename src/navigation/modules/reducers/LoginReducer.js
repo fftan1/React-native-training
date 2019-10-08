@@ -1,9 +1,10 @@
-import { AUTH_LOGIN, AUTH_LOGIN_FAIL, AUTH_LOGIN_SUCCESS } from '../actions/types';
+import { AUTH_LOGIN, AUTH_LOGIN_FAIL, AUTH_LOGIN_SUCCESS, AUTH_LOGIN_ERROR_NETWORK } from '../actions/types';
 
 const initialState = {
   loginUser: null,
   loading: false,
   error: null,
+  errorNetwork: null,
 };
 
 export default (state = initialState, action) => {
@@ -14,6 +15,7 @@ export default (state = initialState, action) => {
         loginUser: null,
         loading: true,
         error: null,
+        errorNetwork: null,
       };
     }
     case AUTH_LOGIN_SUCCESS: {
@@ -22,6 +24,7 @@ export default (state = initialState, action) => {
         loginUser: action.loginUser,
         loading: false,
         error: null,
+        errorNetwork: null,
       };
     }
     case AUTH_LOGIN_FAIL: {
@@ -30,6 +33,16 @@ export default (state = initialState, action) => {
         loginUser: null,
         loading: false,
         error: action.error,
+        errorNetwork: null,
+      };
+    }
+    case AUTH_LOGIN_ERROR_NETWORK: {
+      return {
+        ...state,
+        loginUser: null,
+        loading: false,
+        error: null,
+        errorNetwork: action.errorNetwork,
       };
     }
     default:
